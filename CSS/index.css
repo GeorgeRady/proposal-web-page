@@ -1,0 +1,12 @@
+table,th,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+body{
+    margin-top: 80px;
+
+}
+p{
+    font-size: larger;
+}
