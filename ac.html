@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button id="up" onclick="ac(1);">
+            UP
+        </button>
+        <button id="down" onclick="ac(2);">
+            DOWN
+        </button>
+        <button id="on" onclick="ac(3);">
+            ON
+        </button>
+        <button id="off" onclick="ac(4);">
+            OFF
+        </button>
+        
+        <script>
+        var i = 0;
+        var ii = 0;
+
+        function up(){
+            
+            setTimeout(function(){
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i<2){
+                    up();
+                }
+                else{
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function(){
+                if (ii<2){
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                }
+                else{
+                    ii = 0;
+                }
+            }, 1500)
+        }
+        function down(){
+            setTimeout(function(){
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i<4){
+                    down();
+                }
+                else{
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function(){
+                if (ii<4){
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                }
+                else{
+                    ii = 0;
+                }
+            }, 1500)
+        }
+        function on(){
+            
+            setTimeout(function(){
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i<6){
+                    on();
+                }
+                else{
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function(){
+                if (ii<6){
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                }
+                else{
+                    ii = 0;
+                }
+            }, 1500)
+        }
+        function off(){
+            
+            setTimeout(function(){
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i<8){
+                    off();
+                }
+                else{
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function(){
+                if (ii<8){
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                }
+                else{
+                    ii = 0;
+                }
+            }, 1500)
+        }
+        function ac(input){
+            
+            if(input == 1){
+                up();
+            }
+            
+            if(input == 2){
+                down();
+            }
+            if(input == 3){
+                on();
+            }
+            if(input ==4){
+               off();
+            }
+        }
+        </script>
+    </body>
+</html>
