@@ -1,0 +1,169 @@
+/*
+ * Blank IoT Node.js starter app.
+ *
+ * Use this template to start an IoT Node.js app on any supported IoT board.
+ * The target board must support Node.js. It is helpful if the board includes
+ * support for I/O access via the MRAA and UPM libraries.
+ *
+ * https://software.intel.com/en-us/xdk/docs/lp-xdk-iot
+ */
+
+
+// keep /*jslint and /*jshint lines for proper jshinting and jslinting
+// see http://www.jslint.com/help.html and http://jshint.com/docs
+/* jslint node:true */
+/* jshint unused:true */
+
+"use strict" ;
+
+
+var mraa = require("mraa") ;
+
+// add any UPM requires that you need
+// and the rest of your app goes here
+// see the samples for more detailed examples
+
+console.log('MRAA Version: ' + mraa.getVersion()) ;     // prints mraa object to XDK IoT debug output panel
+
+
+var myLed = new mraa.Gpio(3);
+myLed.dir(mraa.DIR_OUT);
+var in1 = new mraa.Gpio(4);
+in1.dir(mraa.DIR_IN);
+var in2 = new mraa.Gpio(7);
+in2.dir(mraa.DIR_IN);
+var in3 = new mraa.Gpio(8);
+in3.dir(mraa.DIR_IN);
+var in4 = new mraa.Gpio(12);
+in4.dir(mraa.DIR_IN);
+var i = 0;
+var ii = 0;
+
+function up(){
+var u;
+    setTimeout(function(){
+         u = 1;
+        console.log(u);
+        myLed.write(u);
+        i++;
+        if (i<2){
+            up();
+        }
+        else{
+            i = 0;
+        }
+    }, 1000)
+    setTimeout(function(){
+        if (ii<2){
+            ii++;
+            u = 0;
+            console.log(u);
+            myLed.write(u);
+        }
+        else{
+            ii = 0;
+        }
+    }, 1500)
+}
+function down(){
+    var u;
+    setTimeout(function(){
+         u = 1;
+        console.log(u);
+        myLed.write(u);
+        i++;
+        if (i<4){
+            down();
+        }
+        else{
+            i = 0;
+        }
+    }, 1000)
+    setTimeout(function(){
+        if (ii<4){
+            ii++;
+            u = 0;
+            console.log(u);
+            myLed.write(u);
+        }
+        else{
+            ii = 0;
+        }
+    }, 1500)
+}
+function on(){
+     var u;
+    setTimeout(function(){
+        u = 1;
+        console.log(u);
+        myLed.write(u);
+        i++;
+        if (i<6){
+            on();
+        }
+        else{
+            i = 0;
+        }
+    }, 1000)
+    setTimeout(function(){
+        if (ii<6){
+            ii++;
+            u = 0;
+            console.log(u);
+            myLed.write(u);
+        }
+        else{
+            ii = 0;
+        }
+    }, 1500)
+}
+function off(){
+    
+     var u;
+    setTimeout(function(){
+         u = 1;
+        console.log(u);
+        myLed.write(u);
+        i++;
+        if (i<8){
+            off();
+        }
+        else{
+            i = 0;
+        }
+    }, 1000)
+    setTimeout(function(){
+        if (ii<8){
+            ii++;
+            u = 0;
+            console.log(u);
+            myLed.write(u);
+        }
+        else{
+            ii = 0;
+        }
+    }, 1500)
+}
+var inn1 = in1.read();
+var inn2 = in2.read();
+var inn3 = in3.read();
+var inn4 = in4.read();
+
+
+setInterval(function (){
+    if(inn1 == 1){
+        up();
+    }
+
+    if(inn2 == 1){
+        down();
+    }
+    if(inn3 == 1){
+        on();
+    }
+    if(inn4 == 1){
+       off();
+    }
+}, 1000);
+
+
