@@ -4,7 +4,7 @@ table,th,tr,td{
     padding: 10px;
 }
 body{
-    margin-top: 80px;
+    margin-top:0;
     margin-bottom : 0;
 
 }
@@ -13,4 +13,12 @@ p{
 }
 a{
     color: #064985;
+}
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+.video{
+    background-color: #212529;
+    margin: 0;
+    padding: 0;
 }

@@ -1,27 +1,229 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Required meta tags always come first -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-        <title>
-            Processes
-        </title>
-        <link rel="icon" type="image/png" href="media/images.png">
-        <link rel="stylesheet" href="CSS/index.css">
-    </head>
-    <body>
-        <div>
-            This is the processes page.
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+    </script>
+    <!-- icon website and title -->
+    <title>AC Controller</title>
+    <link rel="icon" type="image/png" href="media/images.png">
+    <link rel="stylesheet" href="CSS/index.css">
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="media/images.png" width="40" height="40" class="rounded-circle">
+                <a class="navbar-brand" href="#" style="color: #d8670a; font-weight: bolder;">AC Controller</a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="justify-content-end collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav" id="Navbar">
+                    <a class="nav-link " href="./index.html">Home</a>
+                    <a class="nav-link " href="./about.html">About</a>
+                    <a class="nav-link active" aria-current="page" href="#">Processes</a>
+                    <a class="nav-link " href="./contact.html">Contact</a>
+                </div>
+            </div>
         </div>
-        <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="node_modules/tether/dist/js/tether.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </nav>
+    <div class="row" style="padding: 2%;">
+    </div>
+    <div class="row" style="padding:2% ;">
+        <form action="">
+            <button id="up" onclick="ac(1);" style="border: white 1px ; border-radius: 10px; ">
+                UP
+            </button>
+            <button id="down" onclick="ac(2);" style="border: white 1px ; border-radius: 10px; ">
+                DOWN
+            </button>
+            <button id="on" onclick="ac(3);" style="border: white 1px ; border-radius: 10px; ">
+                ON
+            </button>
+            <button id="off" onclick="ac(4);" style="border: white 1px ; border-radius: 10px; ">
+                OFF
+            </button>
+        </form>
+    </div>
+    <div class="row" style="padding:2% ;">
+        <div>
+            <a href="./happy.html"><button style="border: white 1px ; border-radius: 10px; ">
+                Happy Number
+            </button></a>
+        </div>
+        <div>
+            <a href="./puzzle.html"><button style="border: white 1px ; border-radius: 10px; ">
+                Puzzle
+            </button></a>
+        </div>
+    </div>
+    <footer style="margin: 0; background-color: #212529; color: white;">
+        <div style="padding: 4%; ">
+            <h5 style="font-weight: bold;">Our Address :</h5>
+            <div class="row" >            
+                <div class="col-6">
+                    Faculty of Engineering, Minia University,<br>
+                    Egypt<br>
+                    Tel.:<br>
+                    <a href="tel:+201554992081">+201554992081</a><br>
+                    <a href="tel:+201554954621">+201554954621</a><br>
+                    <a href="tel:+201554798994">+201554798994</a>
+                </div>
+                <div class="col-6">
+                    <div style="display: block;">
+                        Emails :<br>
+                        <a href="mailto:Ranawael9721@gmail.com">Ranawael9721@gmail.com</a><br>
+                        <a href="mailto:Ahmed4ehab@yahoo.com">Ahmed4ehab@yahoo.com</a><br>
+                        <a href="mailto:georgemagdy98@gmail.com">georgemagdy98@gmail.com</a>
+                        <br>
+                        facebook :<br>
+                        <a href="https://web.facebook.com/RanaWael30/" style="display: inline-block;"> Rana</a>
+                        <a href="https://web.facebook.com/george.magdy.12327/" style="display: inline-block;"> George</a>
+                        <a href="https://web.facebook.com/a7md4ehab/" style="display: inline-block;"> Ahmed</a>
+                    </div>
+                </div>          
+            </div>
+            <div style="float: right; margin: auto;">   
+                <p>© Copyright CSE 2020</p>         
+            </div>
+        </div>
+    </footer>
+    <script>
+        var i = 0;
+        var ii = 0;
 
-    </body>
+        function up() {
+
+            setTimeout(function () {
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i < 2) {
+                    up();
+                } else {
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function () {
+                if (ii < 2) {
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                } else {
+                    ii = 0;
+                }
+            }, 1500)
+        }
+
+        function down() {
+            setTimeout(function () {
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i < 4) {
+                    down();
+                } else {
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function () {
+                if (ii < 4) {
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                } else {
+                    ii = 0;
+                }
+            }, 1500)
+        }
+
+        function on() {
+
+            setTimeout(function () {
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i < 6) {
+                    on();
+                } else {
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function () {
+                if (ii < 6) {
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                } else {
+                    ii = 0;
+                }
+            }, 1500)
+        }
+
+        function off() {
+
+            setTimeout(function () {
+                var u = 1;
+                console.log(u);
+                i++;
+                if (i < 8) {
+                    off();
+                } else {
+                    i = 0;
+                }
+            }, 1000)
+            setTimeout(function () {
+                if (ii < 8) {
+                    ii++;
+                    u = 0;
+                    console.log(u);
+                } else {
+                    ii = 0;
+                }
+            }, 1500)
+        }
+
+        function ac(input) {
+
+            if (input == 1) {
+                up();
+            }
+
+            if (input == 2) {
+                down();
+            }
+            if (input == 3) {
+                on();
+            }
+            if (input == 4) {
+                off();
+            }
+        }
+    </script>
+</body>
+
 </html>
