@@ -53,7 +53,7 @@
     </nav>
     <div class="row" style="padding: 2%;">
     </div>
-    <div class="row" style="padding:2% ;">
+    <div class="row" style="padding:2% ; background-color: gray; margin: 2% 30% ; vertical-align: middle; text-align: center;">
         <form action="">
             <button id="up" onclick="ac(1);" style="border: white 1px ; border-radius: 10px; ">
                 UP
@@ -68,6 +68,18 @@
                 OFF
             </button>
         </form>
+        
+    </div>
+    <div style="background-color: gray; margin: 2%; text-align: center; margin: 2% 40%; border: black solid; padding: 0%; padding-top: 1%;">
+        <p style="color: white;"> Air con</p>
+        <div  style="background-color: white; height: 100%; padding: 2%;">
+            <div id="Cont">
+                <p id="AC">
+                   OFF
+                </p>
+                
+            </div>
+        </div>
     </div>
     <div class="row" style="padding:2% ;">
         <div>
@@ -113,101 +125,39 @@
         </div>
     </footer>
     <script>
-        var i = 0;
-        var ii = 0;
+        var num = 35;
 
         function up() {
-
-            setTimeout(function () {
-                var u = 1;
-                console.log(u);
-                i++;
-                if (i < 2) {
-                    up();
-                } else {
-                    i = 0;
-                }
-            }, 1000)
-            setTimeout(function () {
-                if (ii < 2) {
-                    ii++;
-                    u = 0;
-                    console.log(u);
-                } else {
-                    ii = 0;
-                }
-            }, 1500)
+            num += 1;
+            var cont = document.getElementById("Cont");
+            var p = document.getElementById('AC');
+            p.innerHTML = num;
+            cont.appendChild(p);
         }
 
         function down() {
-            setTimeout(function () {
-                var u = 1;
-                console.log(u);
-                i++;
-                if (i < 4) {
-                    down();
-                } else {
-                    i = 0;
-                }
-            }, 1000)
-            setTimeout(function () {
-                if (ii < 4) {
-                    ii++;
-                    u = 0;
-                    console.log(u);
-                } else {
-                    ii = 0;
-                }
-            }, 1500)
+            num -= 1;
+            var cont = document.getElementById("Cont");
+            var p = document.getElementById('AC');
+            p.innerHTML = num;
+            cont.appendChild(p);
         }
 
         function on() {
-
-            setTimeout(function () {
-                var u = 1;
-                console.log(u);
-                i++;
-                if (i < 6) {
-                    on();
-                } else {
-                    i = 0;
-                }
-            }, 1000)
-            setTimeout(function () {
-                if (ii < 6) {
-                    ii++;
-                    u = 0;
-                    console.log(u);
-                } else {
-                    ii = 0;
-                }
-            }, 1500)
+            var cont = document.getElementById("Cont");
+            var p = document.getElementById('AC');
+            p.innerHTML = num;
+            cont.appendChild(p);
         }
 
         function off() {
-
-            setTimeout(function () {
-                var u = 1;
-                console.log(u);
-                i++;
-                if (i < 8) {
-                    off();
-                } else {
-                    i = 0;
-                }
-            }, 1000)
-            setTimeout(function () {
-                if (ii < 8) {
-                    ii++;
-                    u = 0;
-                    console.log(u);
-                } else {
-                    ii = 0;
-                }
-            }, 1500)
+            var cont = document.getElementById("Cont");
+            var p = document.getElementById('AC');
+            p.innerHTML = "OFF";
+            cont.appendChild(p);
         }
 
-        function ac(input) {
+        function ac(input) { 
 
             if (input == 1) {
                 up();

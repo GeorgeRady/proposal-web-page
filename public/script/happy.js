@@ -16,9 +16,9 @@ function prom(){
         n = String(num);
     }
     if (num==1){
-        alert("Happy"+" "+out);
+        alert("Happy :) "+" "+out);
     }
     else{
-        alert("Not Happy"+" "+out);
+        alert("Not Happy :( "+" "+out);
     }
 }

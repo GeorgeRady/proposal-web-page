@@ -9,21 +9,28 @@
             }
         </style>
     </head>
-    <body style="background-image: url(./media/puzzle_back.jpg);background-size: 1600px;"onload="puzzle();">
-        <div >
+    <body style="background-image: url(./media/puzzle_back.jpg);background-repeat: no-repeat; background-size: cover;">
             <button onclick="puzzle();"
-                style=" font:20px bold sans-serif;border: white 1px;border-radius: 50px; height: 90px;width: 90px;position: fixed;top: 50%;left: 50%;outline: none;">Play Again
+                style=" font:20px bold sans-serif;border: white 1px;border-radius: 50px; height: 90px;width: 90px;position: fixed;top: 80%;left: 47%;outline: none;">Puzzle
                 </button>
-        </div >
-        <script>
+        
+        <script >
             var correct = 0;
-            var tries = Array(6);
+            var num;
+            var tries = Array(0);
+            
             function puzzle() {
-                var random = Math.round(Math.random()*100);
+                var div = document.getElementsByTagName("div")[0];
+                if (div != null){
+                   div.remove(); 
+                }
+                tries = Array(0);
+                var random = Math.round(Math.random()*100) + 1;
                 console.log(random)
                 for(i=0;i<6;i++) {
                     var number = prompt("Guess the number:");
-                    tries[i] = parseInt(number);
+                    num = parseInt(number);
+                    tries.push(num)
                     if (tries[i] == random) {
                         correct = 1;
                         break;
@@ -31,40 +38,44 @@
                     else if (tries[i] < random) {
                         alert("Too low");
                     }
-                    else
+                    else 
                     {
                         alert("Too high");
                     }
+
                 }
                 window.setTimeout(result, 2000);
             }
             function result() {
                 var body = document.getElementsByTagName("body")[0];
+                var br = document.createElement("br");
+                var div = document.createElement('div');
+                div.setAttribute("style", "background-color:#0C5B99; margin: 8% 15%; text-align: center; vertical-align: middle; padding: 2%;")
+                body.appendChild(div);
                 if (correct) {
-                    var br = document.createElement("br");
                     body.appendChild(br);
                     var text = document.createElement('p');
                     text.innerHTML = "Congrats!"
-                    body.appendChild(text);
+                    div.appendChild(text);
                     var img = document.createElement("img");
-                    img.src = "puzzle.jpg";
-                    body.appendChild(img);
-                    
+                    img.src = "winner.jpg";
+                    div.appendChild(img);
                     var text = document.createElement('p');
                     text.innerHTML = tries;
-                    body.appendChild(text);
+                    div.appendChild(text);
                 }
                 else {
                     var loser = document.createElement('p');
                     loser.innerHTML = "Game Over!";
-                    body.appendChild(loser);
+                    div.appendChild(loser);
                     var text = document.createElement('p');
                     text.innerHTML = tries;
-                    body.appendChild(text);
-                    
+                    div.appendChild(text);
                 }
                 correct = 0;
+                var rem = tries.pop();
             }
+            
         </script>
     </body>
 </html>
