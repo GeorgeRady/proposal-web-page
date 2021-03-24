@@ -53,50 +53,53 @@
     </nav>
     <div class="row" style="padding: 2%;">
     </div>
-    <div class="row" style="padding:2% ; background-color: gray; margin: 2% 30% ; vertical-align: middle; text-align: center;">
-        <form action="">
-            <button id="up" onclick="ac(1);" style="border: white 1px ; border-radius: 10px; ">
-                UP
-            </button>
-            <button id="down" onclick="ac(2);" style="border: white 1px ; border-radius: 10px; ">
-                DOWN
-            </button>
-            <button id="on" onclick="ac(3);" style="border: white 1px ; border-radius: 10px; ">
+    <div class="row"style="padding:2% ; background-color: gray; margin: 2% 40% ; vertical-align: middle; text-align: center; width: 20%;">
+        <div class="grid-container" style="display:grid;grid-template-columns: 100px 100px;grid-row-gap: 10px;margin-right: 10px;">
+            <div ><button id="on" onclick="ac(3);" style="border: white 1px ; border-radius: 10px; ">
                 ON
-            </button>
-            <button id="off" onclick="ac(4);" style="border: white 1px ; border-radius: 10px; ">
+            </button></div>
+        <div><button id="off" onclick="ac(4);" style="border: white 1px ; border-radius: 10px; ">
                 OFF
-            </button>
-        </form>
-        
+            </button></div>
+            <div ><button id="up" onclick="ac(1);" style="border: white 1px ; border-radius: 10px;">
+                    UP
+                </button></div>
+            <div ><button id="down" onclick="ac(2);" style="border: white 1px ; border-radius: 10px;">
+                    DOWN
+                </button></div>
+        </div>
     </div>
-    <div style="background-color: gray; margin: 2%; text-align: center; margin: 2% 40%; border: black solid; padding: 0%; padding-top: 1%;">
+    <div
+        style="background-color: gray; margin: 2%; text-align: center; margin: 2% 40%; border: black solid; padding: 0%; padding-top: 1%;">
         <p style="color: white;"> Air con</p>
-        <div  style="background-color: white; height: 100%; padding: 2%;">
+        <div style="background-color: white; height: 100%; padding: 2%;">
             <div id="Cont">
                 <p id="AC">
-                   OFF
+                    OFF
                 </p>
-                
+
             </div>
         </div>
     </div>
     <div class="row" style="padding:2% ;">
-        <div>
-            <a href="./happy.html"><button style="border: white 1px ; border-radius: 10px; ">
-                Happy Number
-            </button></a>
-        </div>
-        <div>
-            <a href="./puzzle.html"><button style="border: white 1px ; border-radius: 10px; ">
-                Puzzle
-            </button></a>
-        </div>
+        <h2>Play a Game:</h2>
+        <ol>
+            <li ><div style="margin-bottom: 10px;">
+                <a href="./happy.html"><button style="border: white 1px ; border-radius: 10px; ">
+                        Happy Number
+                    </button></a>
+            </div></li>
+            <li><div>
+                <a href="./puzzle.html"><button style="border: white 1px ; border-radius: 10px; ">
+                        Puzzle
+                    </button></a>
+            </div></li>
+    </ol>
     </div>
     <footer style="margin: 0; background-color: #212529; color: white;">
         <div style="padding: 4%; ">
             <h5 style="font-weight: bold;">Our Address :</h5>
-            <div class="row" >            
+            <div class="row">
                 <div class="col-6">
                     Faculty of Engineering, Minia University,<br>
                     Egypt<br>
@@ -114,36 +117,43 @@
                         <br>
                         facebook :<br>
                         <a href="https://web.facebook.com/RanaWael30/" style="display: inline-block;"> Rana</a>
-                        <a href="https://web.facebook.com/george.magdy.12327/" style="display: inline-block;"> George</a>
+                        <a href="https://web.facebook.com/george.magdy.12327/" style="display: inline-block;">
+                            George</a>
                         <a href="https://web.facebook.com/a7md4ehab/" style="display: inline-block;"> Ahmed</a>
                     </div>
-                </div>          
+                </div>
             </div>
-            <div style="float: right; margin: auto;">   
-                <p>© Copyright CSE 2020</p>         
+            <div style="float: right; margin: auto;">
+                <p>© Copyright CSE 2020</p>
             </div>
         </div>
     </footer>
     <script>
         var num = 35;
+        var state = 0;
 
         function up() {
-            num += 1;
-            var cont = document.getElementById("Cont");
-            var p = document.getElementById('AC');
-            p.innerHTML = num;
-            cont.appendChild(p);
+            if (state == 1) {
+                num += 1;
+                var cont = document.getElementById("Cont");
+                var p = document.getElementById('AC');
+                p.innerHTML = num;
+                cont.appendChild(p);
+            }
         }
 
         function down() {
-            num -= 1;
-            var cont = document.getElementById("Cont");
-            var p = document.getElementById('AC');
-            p.innerHTML = num;
-            cont.appendChild(p);
+            if (state == 1) {
+                num -= 1;
+                var cont = document.getElementById("Cont");
+                var p = document.getElementById('AC');
+                p.innerHTML = num;
+                cont.appendChild(p);
+            }
         }
 
         function on() {
+            state = 1
             var cont = document.getElementById("Cont");
             var p = document.getElementById('AC');
             p.innerHTML = num;
@@ -151,13 +161,14 @@
         }
 
         function off() {
+            state = 0;
             var cont = document.getElementById("Cont");
             var p = document.getElementById('AC');
             p.innerHTML = "OFF";
             cont.appendChild(p);
         }
 
-        function ac(input) { 
+        function ac(input) {
 
             if (input == 1) {
                 up();
